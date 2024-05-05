@@ -1,6 +1,7 @@
 :root{
   --main-color:#22b0ee;
   --main--color:#e52266;
+  --facebook-color: #1077f2;
 }
 /* Start Global Rules  */
 *{
@@ -47,7 +48,7 @@ li{
 /* End Global Rules  */
   .header{
     width: 100%;
-    min-height: 115vh;
+    /* min-height: 115vh; */
     color: white;
     background-image:linear-gradient(to bottom right,#22b0ee,#e52266);
     position: relative;
@@ -55,7 +56,12 @@ li{
   }
   @media(max-width:767px){
     .header{
-      min-height: 130vh;
+      min-height: 120vh;
+    }
+  }
+  @media(min-width:768px) {
+    .header {
+      height: 875px;
     }
   }
   .header .nav{
@@ -114,15 +120,27 @@ li{
     .header nav ul {
       display: none;
     }
-    /* .header nav .toggle-menu:active + ul {
+    @media (max-width: 767px) {
+      .header nav ul:hover {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(151, 71, 71, 0.5);
+      }
+    }
+    .header nav .toggle-menu:active + ul {
       display: flex;
       flex-direction: column;
       position: absolute;
       top: 60px;
       left: 0;
       width: 100%;
-      background-color: rgba(151, 71, 71, 0.5);
-    }  */
+      background-color: #36a2e04b;
+      
+    } 
     .header .nav img{
       display:none;
     }
@@ -135,7 +153,7 @@ li{
     font-weight: bold;
     display: block;
     color: rgba(255, 255, 255, 0.493);
-    font-size: 25px;
+    font-size: 20px;
     transition: 0.3s;
     z-index: 2;
   }
@@ -156,7 +174,7 @@ li{
 }
 .front .letter h1{
   font-weight: 200;
-  font-size: 54px;
+  font-size: 45px;
   margin-top: 100px;
   margin-bottom: 0;
 }
@@ -164,14 +182,14 @@ li{
     margin-top: 10px;
     letter-spacing: 1.2px;
     line-height: 1.6;
-    font-size: 30px;
+    font-size: 25px;
   }
 @media(max-width:767px){
   .front .letter h1{
-    font-size: 45px;
+    font-size: 40px;
   }
   .front .letter p{
-    font-size: 25px;
+    font-size: 18px;
   }
 }
 .front .letter p a{
@@ -185,9 +203,9 @@ li{
 .download .container{
   background-color: #ffffff;
   text-align: center;
-  width: 500px;
+  width: 450px;
   position: relative;
-  top:-130px;
+  top:-50px;
   padding:35px 25px;
   z-index:2; 
   box-shadow: 0px 0px 24px rgba(100,100,100,0.5),
@@ -208,7 +226,7 @@ li{
   font-size: 30px;
 }
 .download .container p{
-  font-size: 19px;
+  font-size: 15px;
   text-transform: capitalize;
   color: #767676;
 }
@@ -276,7 +294,7 @@ li{
 }
 .service .container h2{
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 100px;
 }
 .service .container h2 span{
@@ -303,19 +321,19 @@ li{
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
 }
 .service .container .flex i,.service .container .flex i{
-  font-size: 50px;
+  font-size: 40px;
   color: #dc296d;
   margin-top: 15px;
   margin-bottom: 0;
 }
 .service .container .flex h4{
-  font-size: 30px;
-  font-weight: 100;
+  font-size: 25px;
+  font-weight: 700;
   color: #dc296d;
 }
 .service .container .flex p{
   color: #767676;
-  font-size: 25px;
+  font-size: 17px;
 }
 @media(max-width:767px){
   .service .container h2{
@@ -353,7 +371,7 @@ li{
   transform: skewY(5deg);
 }
 .developer .container h3{
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 100;
   color: #fff;
   text-align: center;
@@ -390,7 +408,7 @@ li{
 .developer .container .block .text a i{
   float: left;
   color: #767676;
-  font-size: 25px;
+  font-size: 20px;
   transition: .3s
 }
 @media(max-width:767px){
@@ -399,7 +417,7 @@ li{
   }
 }
 .developer .container .block .text a i:hover{
-  color: #07acf3;
+  color: var(--facebook-color);
 }
 .developer .container .define .block{
   margin: -10px 0;
@@ -408,7 +426,7 @@ li{
   padding: 20px 15px 25px;
   background-color: #ddd;
   color: #000;
-  font-size: 22px;
+  font-size: 19px;
   width: 205px;
   text-align: center;
   border-radius: 10px;
@@ -418,6 +436,8 @@ li{
 }
 .developer p{
   direction: rtl;
+  color: var(--facebook-color);
+  animation: black-blue 2s infinite  ease-in-out;
 }
 @media(max-width:767px){
   .developer .container .define .block h4{
@@ -431,7 +451,7 @@ li{
   color: #767676;
   position: relative;
   top: -40px;
-  font-size: 25px;
+  font-size: 19px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.5),
   inset -4px 0px 20px rgba(181,168,168,0.5);
@@ -447,7 +467,7 @@ li{
 }
 .developer .container .define .block:nth-child(2) h4{
   position: relative;
-  left: 194px;
+  left: 195px;
 }
 @media(max-width:767px){
   .developer .container .define .block:nth-child(1){
@@ -472,10 +492,10 @@ footer .container h4{
   align-self: flex-start;
   text-transform: capitalize;
   color: #767676;
-  font-size: 30px;
+  font-size: 25px;
 }
 footer .container p{
-  font-size: 32px;
+  font-size: 25px;
   text-align: center;
   text-transform: capitalize;
   color: #00000052;
@@ -491,3 +511,15 @@ footer span {
   font-weight: bold;
 }
 /* E-Footer */
+
+@keyframes black-blue {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: var(--facebook-color);
+  }
+  100% {
+    color: #000;
+  }
+}
